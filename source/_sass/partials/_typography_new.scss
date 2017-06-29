@@ -1,0 +1,27 @@
+@import '//fonts.googleapis.com/css?family=Roboto:400,500';
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+
+  color: #666;
+
+  font-weight: 500;
+}
+
+a {
+  background: transparent;
+  &:focus {
+    outline: thin dotted;
+  }
+  &:active, &:hover {
+    text-decoration: none;
+
+    color: #000;
+    outline: 0;
+  }
+}

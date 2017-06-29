@@ -1,0 +1,57 @@
+
+//inputs and forms
+label{
+  display: block;
+
+  font-weight: 400;
+}
+
+input[type='text'],
+input[type='email']{
+  display: block;
+
+  width: 100%;
+  padding: 0.5em;
+
+  border: 1px solid $gray-light;
+  &.error{
+    border: 2px solid $brand-danger;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio']{
+  margin-right: 0.5em;
+}
+
+input, textarea {
+  &[type="submit"] {
+    -webkit-appearance: none;
+  }
+  &.input-lg {
+    font-size: 1em;
+  }
+  &.form-control {
+    border: 1px solid $gray-light;
+    border-radius: $br;
+  }
+}
+
+textarea{
+  width: 100%;
+  padding: 1em;
+
+  border: 1px solid $gray-light;
+}
+
+// Get rid of IE10+ X to clear in all inputs
+::-ms-clear {
+  display: none;
+}
+
+
+fieldset {
+  padding: 20px 15px;
+
+  border: none;
+}

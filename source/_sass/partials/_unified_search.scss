@@ -1,0 +1,461 @@
+// Term wrapper ================================================================
+.term-wrapper {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-bottom: 10px;
+  padding: 10px 11px;
+  color: set-text-color($brand-primary);
+  border-radius: 18px;
+  background: $brand-primary;
+  .fa {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.term-clear {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 5px 12px;
+  color: $gray;
+  border: none;
+  border-radius: 18px;
+  background: none;
+  &:hover {
+    color: set-text-color($brand-primary);
+    background: $brand-primary;
+  }
+  &:active {
+    transform: scale(.95);
+    transform-origin: center;
+  }
+}
+
+// Search term bar =============================================================
+.search-terms {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-top: 0;
+  padding-right: 7em;
+  padding-left: 1em;
+  background: #f7f7f7;
+  &.active {
+    height: auto;
+    padding-top: 10px;
+  }
+  .search-term {
+    float: left;
+    width: auto;
+  }
+  p {
+    display: inline-block;
+    float: left;
+    margin-top: 8px;
+    margin-right: 1em;
+  }
+}
+
+// Suggestion drop drop-down & block scope classes =============================
+.search-suggestions {
+  position: relative;
+  z-index: 6;
+  right: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: none;
+  height: 325px;
+  border-top: 1px solid $gray-lighter;
+  border-left: 1px solid $gray-lighter;
+  background: white;
+  &.loading:after {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background: rgba(255, 255, 255, .8);
+  }
+  .btn.btn-back,
+  .btn.btn-close {
+    font-size: 13px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: $gray-light;
+    &:active {
+      transform: scale(.8);
+      transform-origin: center;
+      box-shadow: none;
+    }
+  }
+  .btn.btn-close {
+    top: 0.5em;
+    right: 1em;
+    padding: 8px;
+    color: set-text-color($brand-primary);
+    background: $brand-primary;
+  }
+  .btn.btn-back {
+    top: 0.5em;
+    left: 0.5em;
+    padding: 9px;
+    background: none;
+    &:active {
+      color: #fff;
+      color: set-text-color($brand-primary);
+      background: $gray-light;
+    }
+  }
+  .toggle-element {
+    margin-left: 2em !important;
+  }
+}
+
+// Suggestion panels - primary in view  ========================================
+.search-suggestions__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 317px;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  background: #fff;
+  h4 {
+    margin: 1em 0;
+    padding-left: 1em;
+  }
+  li {
+    display: inline-block;
+    float: left;
+    padding: 0;
+    // Push titles away from first icon globally
+    span.fa:first-of-type {
+      width: 1em;
+      margin-right: 0.5em;
+    }
+    &:last-of-type > ul {
+      border: none;
+    }
+  }
+  .col-xs-12 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Secondary slides in from left ===============================================
+.search-suggestions__panel--primary {
+  li {
+    clear: both;
+    width: 100%;
+    padding-top: 0.5em;
+    @media(min-width: 350px) {
+      clear: none;
+      width: 50%;
+    }
+    @media(min-width: 600px) {
+      clear: none;
+      width: 33%;
+    }
+  }
+  > ul > li:nth-child(3n) {
+    clear: both;
+    width: 100%;
+    @media(min-width: 600px) {
+      clear: none;
+      width: 33%;
+    }
+  }
+  h4 {
+    margin: 1em 0;
+  }
+}
+
+// ul for suggestions + contained elements =====================================
+.suggestion-list {
+  height: auto;
+  max-height: 240px;
+  margin: 0;
+  padding: 0 1em 1em;
+  vertical-align: top;
+  @media(min-width: 350px) {
+    height: 240px;
+  }
+  @media(min-width: 600px) {
+    border-right: 2px solid $gray-lighter;
+  }
+  // li ========================================================================
+  .suggestion-list--suggestion {
+    position: relative;
+    clear: both;
+    width: 100%;
+    padding: 0;
+  }
+  .suggestion-list--suggestion--empty {
+    font-size: 15px;
+    padding-left: 2em;
+    color: $gray-light;
+  }
+  .suggestion-list--suggestion--all a {
+    font-weight: bold;
+  }
+  // li - advanced filters =====================================================
+  .suggestion-list--suggestion--secondary {
+    @media(min-width: 600px) {
+    }
+    &.show-at-2col {
+      @media(min-width: 600px) {
+        display: none;
+      }
+    }
+  }
+  // Create term links =========================================================
+  a {
+    font-size: 13px;
+    position: relative;
+    display: block;
+    padding: 7px;
+    @media(min-width: 350px) {
+      font-size: 15px;
+    }
+    &:hover {
+      color: set-text-color($brand-primary);
+      background: $brand-primary;
+    }
+    &:active {
+      transform: scale(.95);
+      transform-origin: center;
+    }
+    span.fa.interface-icon {
+      color: $gray-light;
+    }
+    span.fa.fa-chevron-right {
+      float: right;
+      margin-top: 3px;
+    }
+    span.badge {
+      position: absolute;
+      top: 50%;
+      right: 7px;
+      margin-top: -9px;
+      color: #000;
+      background: $gray-lighter;
+    }
+  }
+}
+
+// Scrolling suggestions list ==================================================
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-right: 1em;
+  margin-left: 1em;
+  padding-bottom: 1em;
+  white-space: nowrap;
+  @extend .overflow-scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-container__list {
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 16em;
+  padding: 0 1em;
+  white-space: normal;
+  @extend .overflow-scroll;
+  h4 {
+    line-height: inherit;
+    margin-top: 0;
+    padding-right: 1em;
+  }
+  label {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1;
+    display: block;
+    padding: 7px 2em 7px 1em;
+    cursor: pointer;
+    white-space: normal;
+    word-break: break-word;
+    &:hover {
+      color: set-text-color($brand-primary);
+      background: $brand-primary;
+    }
+    &:active {
+      transform: scale(.9);
+    }
+    .fa {
+      display: none;
+    }
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+  input:checked ~ label {
+    color: set-text-color($brand-primary);
+    background: lighten($brand-primary, 20%);
+    .fa {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      display: block;
+      color: set-text-color($brand-primary);
+    }
+  }
+}
+
+.scroll-container__list--participants {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 265px;
+  padding-left: 1em;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  @extend .overflow-scroll;
+}
+
+.scroll-container__list--participants__item {
+  display: inline-block;
+  float: none !important;
+  width: 200px;
+  margin-right: 1em;
+  vertical-align: top;
+  label {
+    white-space: normal;
+  }
+}
+
+.chosen-container-multi {
+  &.chosen-container {
+    display: block;
+    float: left;
+  }
+  .chosen-choices {
+    margin-bottom: 1em;
+    border: 1px solid $gray-light;
+    .search-choice-close {
+      padding-bottom: 3px;
+    }
+  }
+  .chosen-choices li {
+    width: auto;
+  }
+  .chosen-results li {
+    clear: both;
+  }
+  input {
+    width: 100% !important;
+  }
+}
+
+// Media toggles ===============================================================
+.tripple-toggle {
+  margin-top: 1em;
+  label {
+    float: left;
+    width: 100%;
+    margin-right: 0;
+    margin-right: 5px;
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+      color: set-text-color($brand-primary);
+      background: $brand-primary;
+    }
+  }
+  input {
+    position: absolute;
+    left: 10px;
+    margin-right: 0;
+    opacity: 0;
+  }
+  span.interface-icon {
+    font-size: 16px;
+  }
+  span.badge {
+    float: right;
+    margin-right: 0;
+    color: $text-color;
+    background: $gray-lighter;
+  }
+  input:checked ~ label {
+    background: rgba(0, 0, 0, .1);
+  }
+}
+
+.kalendae .k-separator {
+  display: none;
+  @include mobile-first($screen-md-min) {
+    display: inline-block;
+  }
+}
+
+//ANIMATIONS ===================================================================
+// Term bubble bounce
+.search-term.ng-enter,
+.term-wrapper.ng-enter {
+  transition: all 0.15s cubic-bezier(.64, .57, .67, 1.53);
+  transform: scale(.1);
+}
+
+.search-term.ng-enter.ng-enter-active,
+.term-wrapper.ng-enter.ng-enter-active {
+  transform: scale(1);
+}
+
+// Primary/secondary panel slide
+.search-suggestions__panel--primary.ng-hide-add-active,
+.search-suggestions__panel--primary.ng-hide-remove-active,
+.search-suggestions__panel--secondary.ng-hide-add-active,
+.search-suggestions__panel--secondary.ng-hide-remove-active {
+  transition: 0.3s ease-in-out !important;
+}
+
+.search-suggestions__panel--primary {
+  z-index: 0;
+  transform: translateX(0);
+}
+
+.search-suggestions__panel--primary.ng-hide {
+  transform: translateX(-100%);
+}
+
+.search-suggestions__panel--secondary {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-left: 0.3em;
+  transform: translateX(0);
+}
+
+.search-suggestions__panel--secondary.ng-hide {
+  transform: translateX(100%);
+}
+
+.search-suggestions__panel--primary ul.ng-hide-add-active,
+.search-suggestions__panel--primary ul.ng-hide-remove-active {
+  transition: all 0.2s;
+  transition-delay: 0.1s;
+}
+
+.search-suggestions__panel--primary ul {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.search-suggestions__panel--primary ul.ng-hide {
+  transform: translateY(50px);
+  opacity: 0;
+}

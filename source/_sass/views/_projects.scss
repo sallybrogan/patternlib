@@ -1,0 +1,49 @@
+.projects-list {
+  .fa {
+    color: $gray;
+  }
+  ul {
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #DBDBDB;
+    display: table;
+    width: 100%;
+    li {
+      display: table-cell;
+      min-width: 50px;
+      height: 70px;
+      vertical-align: middle;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      a {
+        font-weight: bold;
+        padding: 0 15px;
+        text-align: center;
+        display: block;
+        outline: none;
+        transition: all 0.2s;
+        &:hover {
+          color: $brand-success;
+          .fa {
+            color: $brand-success;
+          }
+        }
+      }
+    }
+  }
+  .fluid-column {
+    width: 100%;
+    a {
+      text-align: left;
+      .fa {
+        float: right;
+        margin-top: 2px;
+      }
+    }
+  }
+  .thumbnail-column {
+    min-width: 100px;
+  }
+}

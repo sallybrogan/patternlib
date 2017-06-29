@@ -1,0 +1,47 @@
+// checkbox and radio replacement
+.radio label, .checkbox label {
+  padding: 0;
+
+  line-height: 30px;
+}
+
+.input-replace {
+  position: relative;
+
+  float: left;
+
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+
+  cursor: pointer;
+  user-select: none;
+
+  border: 2px solid $input-border;
+  border-radius: 50%;
+  background: $input-bg;
+
+  &:after {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    visibility: hidden;
+
+    width: 20px;
+    height: 20px;
+
+    content: '';
+    transition: all 0.1s;
+    transform: scale(0);
+
+    border-radius: 50%;
+    background: $brand-success;
+  }
+
+  &.checked:after {
+    visibility: visible;
+
+    transform: scale(1);
+  }
+}

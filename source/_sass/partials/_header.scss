@@ -1,0 +1,255 @@
+$header-box-size: 70px;
+
+.top-bar {
+  background: $gray-darker;
+
+  table {
+    width: 100%;
+    td {
+      width: $header-box-size;
+      border-left: 1px solid #333333;
+      > a {
+        display: block;
+        text-align: center;
+        font-size: 1.4em;
+        height: $header-box-size;
+        line-height: $header-box-size;
+        outline: none;
+        transition: all 0.2s;
+        &:hover {
+          background: $brand-primary;
+          color: $btn-default-text-color;
+          .fa {
+            color: $btn-default-text-color;
+          }
+        }
+        .count {
+          font-size: $font-size-base;
+          font-weight: bold;
+        }
+      }
+    }
+    a, .fa {
+      color: $gray-light;
+    }
+    &.header-fluid {
+      .fa-user {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  form {
+    position: relative;
+    padding-left: 1em;
+    input {
+      width: 100%;
+      border: none;
+      font-size: 1.4em;
+      line-height: 32px;
+      padding-right: 20px;
+      outline: none;
+      transition: all 0.2s;
+      position: relative;
+      z-index: 2;
+      background: none;
+      color: white;
+      float: left;
+    }
+    button {
+      position: absolute;
+      right: 1em;
+      top: 5px;
+      z-index: 3;
+      background: none;
+      border: none;
+      text-align: center;
+      outline: none;
+      .fa {
+        font-size: 16px;
+      }
+      &:active .fa {
+        color: $brand-success;
+      }
+    }
+  }
+
+  .width-auto {
+    width: auto;
+  }
+  .with-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header-logo img {
+    width: 40px;
+  }
+  .flag {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 7px;
+      background: $brand-danger;
+    }
+  }
+  .tip {
+    position: relative;
+    &:hover .tip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    .tip-text {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      font-size: 11px;
+      background: $brand-success;
+      color: white;
+      padding: 5px;
+      text-align: center;
+      border-radius: 0 0 $br $br;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s;
+    }
+  }
+
+  @include mobile-first ($screen-md-min) {
+    background: white;
+    color: $gray;
+    table {
+      td {
+        border-color: $gray-lighter;
+      }
+      a, .fa {
+        color: $gray;
+      }
+    }
+    form {
+      input {
+        color: $text-color;
+      }
+    }
+    .width-auto {
+      transition: all 0.2s;
+      //&.focus { background:$xl-bg-color; }
+    }
+  }
+}
+
+.drop-hover {
+  position: relative;
+  .drop-icon {
+    display: block;
+    text-align: center;
+    font-size: 1.4em;
+    height: $header-box-size;
+    line-height: $header-box-size;
+  }
+  &:hover .drop-down {
+    visibility: visible;
+    opacity: 1;
+  }
+  .drop-down {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 7;
+    padding-top: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+    &.right {
+      left: auto;
+      right: 0;
+      ul {
+        width: 180px;
+      }
+      ul:after {
+        left: auto;
+        right: 30px;
+      }
+    }
+    a {
+      text-transform: uppercase;
+      font-size: 11px;
+      display: block;
+      padding: 10px;
+      border-left: 4px solid transparent;
+      color: darken($gray-light, 20%);
+      transition: color 0.2s;
+      position: relative;
+      padding-left: 2.5em;
+      &.current {
+        border-left: 4px solid $brand-primary;
+        color: $gray-light;
+        cursor: default;
+      }
+      &.current:hover {
+        color: $gray-light;
+      }
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 5px 0;
+      margin: 0;
+      width: 200px;
+      border-radius: $br2;
+      position: relative;
+      background: $gray-darker;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        border-color: transparent transparent $gray-darker transparent;
+        position: absolute;
+        top: -5px;
+        left: 30px;
+      }
+    }
+    hr {
+      margin-top: 10px;
+      margin-bottom: 7px;
+    }
+    .fa {
+      color: $gray-light;
+      font-size: 14px;
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
+
+.top-bar .header-avatar {
+  border-right: 1px solid $gray-lighter;
+  .drop-icon {
+    padding: 0 10px;
+  }
+  .false-avatar {
+    padding: 7px 10px;
+    background: $gray-lighter;
+    border-radius: 50%;
+    .fa {
+      color: $gray;
+    }
+  }
+}
+
+.user-avatar {
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(black, 0.2);
+}
+
+.page-header h1 {
+  margin-bottom: 0;
+}

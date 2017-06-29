@@ -1,0 +1,49 @@
+.activities {
+  .btn.btn-outlined {
+    background: white;
+  }
+  .btn.btn-outlined:hover {
+    background: #F8F7FC;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .info {
+    margin: 5px 0 40px;
+    display: block;
+  }
+  .button-rack {
+    margin-bottom: 20px;
+  }
+  .notifications {
+    width: 100%;
+    th, td {
+      padding: 15px 5px;
+    }
+    a {
+      font-weight: bold;
+    }
+    tr {
+      @include border(bottom, $gray-light);
+    }
+    .unread {
+      background: lighten($brand-success, 40%);
+    }
+  }
+  .indicators {
+    > div {
+      font-size: $font-size-h1;
+      text-align: center;
+      padding: 100px 0;
+      @include borderTB($gray-light);
+      color: $gray-light;
+    }
+  }
+  .checkboxes {
+    width: 40px;
+  }
+  input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
+  }
+}

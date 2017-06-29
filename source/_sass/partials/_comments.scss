@@ -1,0 +1,145 @@
+#comments {
+  .comment {
+    border-bottom: 2px solid $xl-bg-color;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    table {
+      width: 100%;
+    }
+    .original-comment {
+      margin-bottom: 20px;
+    }
+    td {
+      vertical-align: top;
+    }
+    .avatar {
+      width: 70px;
+    }
+    h4 {
+      margin: 7px 0 0;
+      font-size: $font-size-small;
+    }
+    .time {
+      font-style: italic;
+      font-weight: normal;
+    }
+    p {
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+    }
+    .comment-replies {
+      padding-left: 40px;
+      margin: 0 0 10px 22px;
+      border-left: 5px solid #efefef;
+      display: block;
+      .reply-comment {
+        padding: 15px 0;
+        .avatar {
+          width: 45px;
+        }
+      }
+    }
+    .comment-reply {
+      font-size: $font-size-small;
+      .reply-number {
+        color: white;
+        display: inline-block;
+        padding: 0 4px;
+        background: $brand-success;
+        &.open {
+          background: $gray;
+        }
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      .indicators {
+        margin-left: 63px;
+      }
+    }
+    .comment-form {
+      padding: 20px 0 0 35px;
+      border-left: 5px solid $brand-primary;
+      .button-container {
+        padding-bottom: 0;
+      }
+    }
+    .reply {
+      display: inline-block;
+    }
+    .reply-form {
+      border-top: 2px solid $xl-bg-color;
+      padding-top: 10px;
+      margin-left: 22px;
+    }
+    .replies {
+      padding: 10px 0 0 70px;
+    }
+    .show-hide-replies {
+      padding-left: 15px;
+      margin-left: 15px;
+      border-left: 1px solid $gray-light;
+    }
+    .comment-form {
+      border-bottom: none;
+    }
+    .comment-text {
+      word-break: break-all;
+    }
+  }
+  .comment-form {
+    border-bottom: 2px solid $xl-bg-color;
+    textarea {
+      height: 110px;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      resize: none;
+    }
+    button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      .fa {
+        font-size: 18px;
+        color: $gray-dark;
+        position: relative;
+        top: 2px;
+      }
+      &[type="submit"] {
+        color: $brand-success;
+      }
+      &[type="reset"] {
+        border-right: 1px solid $gray-light;
+        padding-right: 10px;
+        margin-right: 10px;
+      }
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    .button-container {
+      text-align: right;
+      padding-bottom: 10px;
+    }
+  }
+  .success {
+    color: $brand-success;
+  }
+  .danger {
+    color: $brand-danger;
+  }
+  .new-comment {
+    margin-bottom: 40px
+  }
+  .remaining-chars {
+    font-style: italic;
+    font-weight: normal;
+    transition: color 3s;
+  }
+  .indicators {
+    > div {
+      margin-bottom: 10px;
+    }
+  }
+}

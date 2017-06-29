@@ -1,0 +1,295 @@
+$color-1: #99cd2d;
+$color-1-light: lighten($color-1, 20%);
+$color-2: #486062;
+$color-3: #87d1d4;
+$grey: #cdcdcd;
+
+.dashboard {
+  p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  h1, h3 {
+    font-family: georgia;
+  }
+  header {
+    @include border(bottom, $grey);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    h1 {
+      margin-bottom: 10px;
+      font-size: $font-size-xl;
+    }
+    h2 {
+      margin: 0;
+      font-weight: normal;
+      font-size: $font-size-h4;
+    }
+  }
+  h3 {
+    margin-bottom: 35px;
+    font-size: $font-size-h4;
+  }
+  section {
+    margin-bottom: 40px;
+    @include border(bottom, $grey);
+  }
+  .logos {
+    margin-top: 20px;
+    @media only screen and (min-width: $screen-lg-min) {
+      float: right;
+    }
+  }
+  .overview {
+    .overview-info {
+      @extend .clearfix;
+    }
+    .overview-score {
+      font-weight: bold;
+      color: white;
+      position: relative;
+      width: 110px;
+      float: left;
+      margin: 0 40px 0 0;
+      .score, .out-of-bg {
+        border-radius: 50%;
+        background: $color-1;
+      }
+      .score {
+        font-size: $font-size-xl;
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+      .out-of-bg {
+        position: absolute;
+        bottom: 0;
+        right: -5px;
+        z-index: 1;
+        height: 50px;
+        width: 50px;
+      }
+      .out-of {
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+        z-index: 3;
+        padding: 13px 0 0 13px;
+        font-size: $font-size-small;
+        background: url(asset_path("client-portal/bg-overview-score.png")) no-repeat;
+      }
+    }
+    .overall {
+      margin: 20px 0 0;
+      display: inline-block;
+    }
+    .info {
+      display: block;
+      padding-top: 10px;
+      text-align: center;
+      .score {
+        font-size: $font-size-xl;
+      }
+      .opinion {
+        margin-bottom: 15px;
+      }
+      .fa {
+        font-size: 4em;
+      }
+    }
+  }
+  .sentiments {
+    .sentiment {
+      width: 230px;
+      margin: 0 auto;
+      @extend .clearfix;
+    }
+    .info {
+      width: 80px;
+      text-align: center;
+      float: left;
+      .score {
+        font-size: $font-size-xl;
+      }
+      .opinion {
+        margin-bottom: 10px;
+      }
+      .fa {
+        font-size: 4em;
+      }
+    }
+    ul.spots {
+      padding: 0;
+      margin: 15px 0 0 30px;
+      width: 120px;
+      float: left;
+      &.primary li {
+        background: $color-2;
+      }
+      &.secondary li {
+        background: $color-3;
+      }
+      &.tertiary li {
+        background: $color-1;
+      }
+      li {
+        list-style: none;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        margin: 0 12px 12px 0;
+        float: left;
+      }
+    }
+  }
+  .playlists {
+    h3 .fa {
+      display: inline-block;
+      margin-right: 3px;
+    }
+    small {
+      display: block;
+      line-height: 16px;
+    }
+  }
+  [class*="col-"] {
+    padding-bottom: 50px;
+  }
+  .no-padding {
+    padding-bottom: 0;
+  }
+}
+
+.charts {
+  .stacked-bar-graph {
+    padding: 0;
+    margin: 0px;
+    li {
+      list-style: none;
+    }
+    .axis {
+      @include border(bottom, $grey);
+      position: relative;
+      margin-bottom: 20px;
+      font-size: $font-size-h6;
+      color: $grey;
+      span {
+        position: absolute;
+        top: -10px;
+        background: white;
+        padding: 2px 5px;
+      }
+      .zero {
+        left: -2px;
+      }
+      .fifty {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .hundred {
+        right: 0;
+      }
+    }
+    .bar-label {
+      margin: 15px 0 5px;
+    }
+    .bar-graph span {
+      display: block;
+    }
+    .bar {
+      height: 30px;
+      width: 100%;
+      background: $color-2;
+      position: relative;
+      &:hover {
+        .box-val, .box-line {
+          @include opacity(0);
+        }
+      }
+    }
+    .box, .top-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .box {
+      background: $color-1;
+    }
+    .top-box {
+      background: $color-1-light;
+    }
+    .box-val, .top-box-val {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 8px;
+      box-sizing: border-box;
+      font-size: $font-size-small;
+    }
+    .box-num, .top-box-val span {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      font-size: $font-size-h6;
+      transform: translateX(-50%);
+      padding: 1px 3px;
+    }
+    .box-val {
+      transition: all 0.3s;
+      .box-line {
+        @include border(bottom, white);
+        height: 16px;
+      }
+      .box-num {
+        background: white;
+      }
+    }
+    .top-box-val span {
+      background: $color-1-light;
+    }
+  }
+  .key {
+    padding: 20px;
+    background: $gray-lighter;
+    border-radius: $br;
+    display: inline-block;
+    li {
+      margin-right: 20px;
+    }
+    span {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      position: relative;
+      top: 4px;
+      margin: 0 5px 0 0;
+      &.no-margin {
+        margin-right: -3px;
+      }
+    }
+    .dark {
+      background: $color-2;
+    }
+    .green {
+      background: $color-1;
+    }
+    .light-green {
+      background: $color-1-light;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-md-min) {
+  .row.wide-cols {
+    margin-left: -60px;
+    margin-right: -60px;
+    > [class*="col-"] {
+      padding-left: 60px !important;
+      padding-right: 60px !important;
+    }
+  }
+}

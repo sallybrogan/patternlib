@@ -1,0 +1,13 @@
+.error-bar{
+  background-color: $brand-danger;
+}
+
+.error-bar__inner{
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.error-bar__content *{
+  color: #fff;
+}

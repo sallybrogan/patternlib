@@ -1,0 +1,19 @@
+.row-no-gutters {
+  @extend .row;
+  margin-left: 0;
+  margin-right: 0;
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.row-small-gutters {
+  @extend .row;
+  margin-left: -7px;
+  margin-right: -7px;
+  [class*="col-"] {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+}

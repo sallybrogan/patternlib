@@ -1,0 +1,136 @@
+.settings {
+  max-width: 800px;
+  margin: 0 auto;
+  .helper {
+    font-style: italic;
+    line-height: 1.5;
+    &.half {
+      max-width: 450px;
+    }
+    a {
+      color: $brand-primary;
+    }
+  }
+  .list-unstyled {
+    margin-top: 20px;
+    .fa {
+      margin-right: 10px;
+    }
+    li {
+      margin: 5px 0;
+    }
+  }
+  .subnav {
+    border-top: 1px solid $gray-light;
+    margin: 40px 0 50px;
+    a {
+      display: block;
+      padding: 20px 0;
+      border-bottom: 1px solid $gray-light;
+      font-size: 15px;
+      &:active {
+        outline: none;
+      }
+      &:hover {
+        color: black;
+        .fa:last-child {
+          color: $brand-success;
+        }
+      }
+      .fa {
+        font-size: $font-size-large;
+        &:first-child {
+          margin-right: 10px;
+        }
+        &:last-child {
+          float: right;
+          color: $gray-light;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+  .alert {
+    font-weight: bold;
+    border-radius: $br2;
+    list-style: none;
+  }
+}
+
+.vertical-form {
+  label {
+    display: block;
+  }
+  input:focus, input:active, button:active, button:focus:active, button:focus {
+    outline: none;
+  }
+  input[type='text'], input[type='email'], input[type='password'] {
+    background: $xl-bg-color;
+    border: none;
+    box-shadow: none;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    border-radius: $br2;
+    &:focus {
+      box-shadow: none;
+      background: darken($xl-bg-color, 5%);
+    }
+  }
+  input[type='file'] {
+    background: $gray-dark;
+    padding: 20px;
+    border-radius: $br2;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: none;
+    color: white;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: '\f01b';
+      @extend %fa;
+      font-size: 20px;
+      opacity: 0.5;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:hover, &:focus {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  .btn-wrap {
+    text-align: center;
+    @include mobile-first($screen-md-min) {
+      text-align: right;
+    }
+  }
+  .btn {
+    font-weight: bold;
+    background: $brand-primary;
+    padding: 15px 20px;
+    margin-top: 40px;
+    border-radius: $br2;
+    box-shadow: 0px 4px 0px 0px darken($brand-primary, 15%);
+    color: $btn-default-text-color;
+    .fa {
+      font-size: 20px;
+      margin-left: 10px;
+      opacity: 0.5;
+    }
+    &:active {
+      box-shadow: 0px 1px 0px 0px darken($brand-primary, 15%);
+      transform: translateY(3px);
+    }
+    &:hover, &:focus {
+      .fa {
+        opacity: 0.9;
+      }
+    }
+  }
+}

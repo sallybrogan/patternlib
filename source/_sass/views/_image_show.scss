@@ -1,0 +1,43 @@
+.image-wrapper {
+  padding: 10px;
+  background: $gray-dark;
+  border-radius: $br2;
+  margin-bottom: 40px;
+  @include mobile-first($screen-lg-min) {
+    padding: 40px 30px 30px;
+    ul {
+      margin-top: 40px;
+    }
+  }
+  img {
+    box-shadow: 0 0 15px rgba(black, 0.8);
+    border: 1px solid white;
+    margin: 0 auto;
+    max-height: 800px;
+    @extend .respond;
+  }
+  ul {
+    margin-top: 20px;
+    text-align: center;
+    li {
+      border-right: 1px solid $gray;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      &:hover {
+        color: $brand-success;
+      }
+    }
+    .fa {
+      margin-right: 5px;
+    }
+    .fa.fa-repeat {
+      margin: 0 0 0 5px;
+    }
+  }
+}

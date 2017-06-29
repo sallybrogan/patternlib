@@ -1,0 +1,30 @@
+button, a {
+  &.btn-lg {
+    padding: 12px 15px 13px 15px;
+
+    font-size: 15px;
+  }
+
+  &.btn-success {
+    color: white;
+    border-color: $brand-primary;
+    background: $brand-primary;
+
+    &:hover {
+      border-color: darken($brand-primary, 10%);
+      background-color: darken($brand-primary, 10%);
+    }
+  }
+
+  &.btn[disabled] {
+    border-color: grey;
+    background-color: grey;
+
+    &:hover {
+      cursor: not-allowed;
+
+      border-color: grey;
+      background-color: grey;
+    }
+  }
+}

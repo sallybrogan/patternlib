@@ -1,0 +1,340 @@
+// Video_js_overwrite
+
+.video-js.vjs-bsp {
+  margin: 2.5em 0 -2em;
+}
+
+.video-js-responsive-container {
+  overflow: hidden;
+}
+
+// Toggle - hacky overide
+
+.search-results .page-options button.showreel-toggle {
+  width: auto;
+  background-color: $brand-primary;
+  color: set-text-color($brand-primary);
+  @media(min-width: 992px) {
+    position: absolute;
+    right: 2em;
+  }
+}
+
+// Showreel view styles
+
+.box-white.showreel-container {
+  margin: 10px 0 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  clear: both;
+}
+
+.showreel {
+  height: 500px;
+  padding: 0 1em;
+  overflow-x: scroll;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.showreel-stat-container {
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.showreel__current-tag {
+  font-size: 1.2em;
+  top: 0;
+  color: white;
+  padding: 4px 9px;
+  position: absolute;
+  z-index: 1;
+  width: auto;
+}
+
+.showreel__no-results {
+  padding: 50px 0;
+  text-align: center;
+  font-size: 18px;
+  background: white;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.showreel__thumb {
+  float: left;
+  clear: both;
+  width: 72px;
+  margin: 2em 0;
+}
+
+.showreel__timeline {
+  position: relative;
+  float: left;
+  padding-top: 1em;
+  background: $brand-primary;
+  width: calc(100% - 72px);
+  border-radius: 2px;
+  margin: 2em 0 2em;
+  white-space: nowrap;
+}
+
+.showreel__timline__duration {
+  position: absolute;
+  font-size: 0.9em;
+  font-weight: bold;
+  bottom: -1.75em;
+  right: -0.5em;
+}
+
+.showreel__timeline__tag {
+  position: absolute;
+  top: -1.7em;
+  transition: all .3 ease;
+  span {
+    font-size: 1.3em;
+    color: mediumvioletred;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  &:hover > span {
+    transform: scale(1.5);
+  }
+  &:active > span {
+    transform: scale(1.1);
+  }
+}
+
+.showreel__timeline__tag--grouped {
+  span {
+    color: $brand-primary;
+    text-shadow: 2px 0px 0px white, 7px 0px 0px black;
+  }
+}
+
+.showreel__timeline__tag__fig {
+  transform: scale(0);
+  opacity: 0;
+  position: absolute;
+  width: 160px;
+  z-index: 6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.showreel__timeline__tag__fig__img {
+  max-width: 100%;
+}
+
+.showreel__timeline__tag__fig__figcap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  color: #fff;
+}
+
+.showreel__timeline__tag__fig__figcap__time {
+  position: absolute;
+  bottom: 5px;
+}
+
+@keyframes pop-over {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  5% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.showreel__timeline__tag.active {
+  animation: pop-over 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 300px;
+}
+
+.showreel__timeline__title {
+  margin: 0;
+  margin-left: 1em;
+  color: set-text-color($brand-primary);
+}
+
+.showreel__timeline__ruler {
+  line-height: 0;
+  margin-top: 0.75em;
+  span {
+    position: relative;
+    margin-bottom: 0;
+    width: 10%;
+    height: 0.25em;
+    border-right: 1px solid #fff;
+    display: inline-block;
+  }
+}
+
+.showreel__timeline__group__list {
+  list-style: none;
+  padding: 1em 1em 0.75em;
+  border-radius: 2px;
+  background-color: white;
+  transform: scale(0.1, 1);
+  opacity: 0;
+  position: absolute;
+  right: 2000px;
+  width: 375px;
+  z-index: 6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  a:hover {
+    .showreel__timeline__group__list__tag {
+      transform: scale(1.4);
+    }
+  }
+}
+
+.showreel__timeline__group__list__close {
+  position: relative;
+  font-size: 1.4em;
+  float: right;
+  top: -0.75em;
+  right: -0.25em;
+}
+
+.showreel__timeline__group__list__tag-name {
+  font-weight: bold;
+  display: inline-block;
+  width: 168px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.showreel__timeline__group__list__tag, .showreel__timeline__group__list__TC {
+  position: relative;
+  top: -5px;
+}
+
+.showreel__timeline__group__list__TC {
+  display: inline-block;
+}
+
+.video-js-responsive-container {
+  padding-top: 56.25%;
+}
+
+.video-js-responsive-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
+.video-js-responsive-container .video-js {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.showreel__player-controls {
+  position: relative;
+  font-size: 1.2em;
+  top: -2.5em;
+  padding-top: 1.75em;
+  height: 4em;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%);
+}
+
+.showreel__player-controls__button {
+  color: #fff;
+  border: none;
+  background: none;
+  outline: none;
+  &:hover {
+    opacity: 0.6;
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+.showreel__player-controls__tag {
+  color: $brand-primary;
+  font-size: 1.5em !important;
+  position: absolute;
+  right: 2em;
+  top: 1.25em;
+}
+
+.showreel__player-controls__button--play {
+  margin: 0 0.5em;
+  position: relative;
+  span {
+    position: absolute;
+    top: -3px;
+  }
+}
+
+.showreel__player-controls__button--back {
+  position: absolute;
+  right: 5em;
+}
+
+.showreel__player-controls__button--forward {
+  position: absolute;
+  right: 1em;
+}
+
+// CSS transition group animations
+
+// Current tag 
+.slide-in-enter {
+  transform: translate(-100%);
+}
+
+.slide-in-enter.slide-in-enter-active {
+  transform: translate(0px);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slide-in-leave {
+  transform: translate(0px);
+}
+
+.slide-in-leave.slide-in-leave-active {
+  transform: translate(-100%);
+  transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+// Play/pause button
+
+.scale-in-enter {
+  transform: scale(0);
+}
+
+.scale-in-enter.scale-in-enter-active {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: all 300ms;
+}
+
+.scale-in-leave {
+  transform: scale(1);
+}
+
+.scale-in-leave.scale-in-leave-active {
+  transform: scale(0);
+  transform-origin: center center;
+  transition: all 200ms;
+}
+
+
+

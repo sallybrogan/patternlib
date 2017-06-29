@@ -1,0 +1,43 @@
+.table-wrap {
+  margin-bottom: 30px;
+
+  background: white;
+  box-shadow: 0 2px 5px rgba(black, 0.1);
+}
+
+.table-top-bar {
+  border-bottom: 1px solid #DBDBDB;
+  background: #F9F9F9;
+
+  @extend .clearfix;
+  h1 {
+    height: 60px;
+    margin: 0;
+    padding-left: 15px;
+
+    font-size: $font-size-h4;
+    line-height: 60px;
+  }
+}
+
+table{
+  border: 1px solid $gray-light;
+}
+
+th, td{
+  padding: 1em;
+
+  border: 1px solid $gray-light;
+}
+
+td.u-width-auto{
+  white-space: nowrap;
+}
+
+th{
+  text-align: center;
+
+  background-color: $gray-lighter;
+
+  font-weight: 500;
+}

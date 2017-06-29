@@ -1,0 +1,69 @@
+//base styles ---------------------------------------------------
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  &.bg-gray {
+    background: #ECECEC;
+    .top-bar-wrap {
+      border-bottom: none;
+    }
+  }
+  &.client-portal-unwrapped .top-bar-wrap {
+    margin-bottom: 0;
+  }
+}
+
+.top-bar-wrap {
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 35px;
+  background: white;
+  .top-bar {
+    margin: 0 auto;
+  }
+}
+
+.page-content-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-header-box {
+  padding: 50px 0;
+  color: white;
+  &.with-menu {
+    padding-bottom: 0;
+  }
+  h1 {
+    color: white;
+  }
+  @include mobile-first($screen-lg-min) {
+    padding: 100px 0;
+  }
+
+  background: #a8c550;
+  background: -moz-linear-gradient(-15deg, #a8c550 0%, #5cb85c 100%);
+  background: -webkit-linear-gradient(-15deg, #a8c550 0%, #5cb85c 100%);
+  background: linear-gradient(135deg, #a8c550 0%, #5cb85c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a8c550', endColorstr='#5cb85c', GradientType=1);
+}
+
+.page-grey-box {
+  background: $xl-bg-color;
+  padding: 40px 0;
+  @include mobile-first($screen-lg-min) {
+    padding: 60px 0;
+  }
+}
+
+.page-white-box {
+  background: white;
+  padding: 40px 0;
+  @include mobile-first($screen-lg-min) {
+    padding: 60px 0;
+  }
+}

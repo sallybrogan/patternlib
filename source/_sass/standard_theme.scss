@@ -1,0 +1,17 @@
+//theme default colors ------------------------------------------
+$brand-primary: #5CB85C !default;
+$brand-danger: #d9534f !default;
+$btn-primary-color: #5CB85C !default;
+$btn-default-text-color: #313134 !default;
+$btn-hover-text-color: #000000 !default;
+$elm-border-focus-color: darken($brand-primary, 15%) !default;
+$input-border: transparent;
+$input-border-focus: $brand-primary !default;
+
+@import "./bootstrap/variables";
+@import './modules/variables';
+@import './vendor/bootstrap-custom';
+@import './modules/base';
+@import './vendor/base';
+@import './partials/base';
+@import './views/base';

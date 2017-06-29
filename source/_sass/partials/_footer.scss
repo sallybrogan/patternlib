@@ -1,0 +1,28 @@
+.page-footer {
+  border-top: 1px solid $gray-lighter;
+  padding: 2.5em 0 4em;
+  font-size: $font-size-h6;
+  margin-top: 40px;
+  text-align: center;
+  @include mobile-first($screen-sm-min) {
+    text-align: left;
+    .copy {
+      float: right;
+    }
+  }
+  li {
+    border-right: 1px solid $gray-light;
+    padding-right: 10px;
+    margin-right: 10px;
+    &:last-child {
+      border: none;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.client-portal-unwrapped .page-footer {
+  border-top: none;
+  margin-top: 0;
+}

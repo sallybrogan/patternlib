@@ -1,0 +1,121 @@
+@import 'projects';
+@import 'dashboard';
+@import 'media_manager';
+@import 'participants';
+@import 'video_show';
+@import 'image_show';
+@import 'settings';
+@import 'themes';
+@import 'search_results';
+@import 'notifications';
+@import 'playlists';
+@import 'concept_testings';
+@import 'show_reel';
+
+.indicator-loading {
+  @include css-loader();
+}
+
+//TODO Move it somewhere
+*, *:after, *::before {
+  box-sizing: border-box;
+}
+
+.interview-data-link {
+  color: $brand-primary;
+}
+
+.description-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.progress-button {
+  position: relative;
+  display: inline-block;
+  padding: 0 60px;
+  outline: none;
+  border: none;
+  background: #1d9650;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1em;
+  line-height: 4;
+}
+
+.progress-button .content {
+  position: relative;
+  display: block;
+}
+
+.progress-button .progress {
+  background: #148544;
+}
+
+.progress-button .progress-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  height: 100%;
+  background: #0e7138;
+}
+
+.progress-button:hover {
+  background: $brand-primary;
+}
+
+.box-white {
+  background: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.table-box {
+  width: 100%;
+  min-height: 60px;
+  max-height: 2000px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.handsontable-invalid-cell {
+  background-color: #ff96a6 !important; /*gives priority over td.area selection background*/
+}
+
+.htMultiSelectEditor {
+  position: absolute;
+  width: auto;
+  overflow: auto;
+  z-index: 1000;
+  border: solid #CCC 1px;
+  padding: 2px;
+
+  input[type='text'] {
+    width: 96%;
+  }
+
+  ul {
+    padding: 10px;
+    background: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 350px;
+
+    li {
+      list-style: none;
+
+      label {
+        input {
+          margin: 0 20px 0 0;
+        }
+      }
+    }
+  }
+}

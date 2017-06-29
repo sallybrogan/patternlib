@@ -1,0 +1,30 @@
+//typography
+$font-family-base: "Roboto", sans-serif;
+$font-size-base: 14px;
+
+//relative font-size for headers
+$font-size-xl: 3em;
+$font-size-h1: 2.4em; // ~36px
+$font-size-h2: 1.9em; // ~30px
+$font-size-h3: 1.7em; // ~24px
+$font-size-h4: 1.3em; // ~18px
+$font-size-h5: 1em; // ~14px
+$font-size-h6: 0.85em; // ~12px
+$font-size-small: 11px;
+
+$screen-xxl-min: 1400px;
+$screen-xl-min: 1200px;
+
+//border radius on all elements
+$br: 4px;
+$br2: 6px;
+
+//boostrap additions ---------------------------------------------
+$gray-light: #D8D8D8;
+$gray-table: #dddddd;
+$xl-bg-color: #f2f2f2;
+$brand-notify: #ffffdf;
+
+//transcript colors
+$transcript-search: #80bed6;
+$transcript-select: #eeda96;

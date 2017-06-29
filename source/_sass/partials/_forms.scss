@@ -1,0 +1,101 @@
+@import "buttons";
+
+.edit-in-place {
+  span {
+    display: block;
+
+    cursor: text;
+  }
+  input {
+    display: none;
+  }
+  &.active {
+    span {
+      display: none;
+    }
+    input {
+      display: block;
+    }
+  }
+}
+
+.edit-pane {
+  margin: 10px 0 10px 0;
+
+  text-align: right;
+
+  border-bottom: 1px solid #ccc;
+}
+
+//inputs and forms
+input, textarea {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  &[type="submit"] {
+    -webkit-appearance: none;
+  }
+  &.input-lg {
+    font-size: 1em;
+  }
+  &.form-control {
+    border: 1px solid $gray-light;
+    border-radius: $br;
+  }
+}
+
+// Get rid of IE10+ X to clear in all inputs
+::-ms-clear {
+  display: none;
+}
+
+.form-control:focus {
+  border-color: $elm-border-focus-color;
+  box-shadow: 0 0 0.2em $elm-border-focus-color;
+}
+
+fieldset {
+  padding: 20px 15px;
+
+  border: none;
+}
+
+
+.btn.btn-3d {
+  padding: 13px 20px;
+
+  color: $btn-default-text-color;
+  border-radius: $br2;
+  background: $brand-primary;
+  box-shadow: 0px 4px 0px 0px darken($brand-primary, 15%);
+
+  font-weight: bold;
+  .fa {
+    margin-left: 10px;
+
+    opacity: 0.5;
+
+    font-size: 20px;
+  }
+  &:active {
+    transform: translateY(3px);
+
+    box-shadow: 0px 1px 0px 0px darken($brand-primary, 15%);
+  }
+  &:hover, &:focus {
+    outline:none;
+    .fa { opacity:0.9; }
+  }
+}
+
+.btn[disabled] {
+  cursor: default;
+}
+
+.media-manager .media-table .btn {
+  margin-bottom: 2em;
+
+  color: #fff;
+  background-color: $brand-primary;
+  .fa{
+    color: inherit;
+  }
+}

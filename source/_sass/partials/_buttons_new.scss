@@ -1,0 +1,79 @@
+@mixin button($color){
+  margin-right: 1em;
+  padding: 7px 20px;
+
+  cursor: pointer;
+
+  color: set-text-color($color);
+  border-color: $color;
+  border-radius: 20px;
+  outline-color: transparent;
+  background: $color;
+  &:hover {
+    color: $color;
+    outline: none;  
+    background: none;
+  }
+  &:active {
+    outline: none!important;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  &:focus{
+    color: set-text-color($color);
+    outline: none;
+  }
+  &:focus:hover{
+    color: $color;
+  }
+}
+
+@mixin button-secondary($color){
+  color: $color;
+  border-color: $color;
+  background: none;
+  &:hover {
+    color: set-text-color($color);
+    outline: none;  
+    background: $color;
+  }
+  &:active, &:focus:hover {
+    color: set-text-color($color);
+    background: $color;
+  }
+  &:focus{
+    color: $color;
+    background: none;
+  }
+}
+
+//global button styles
+.btn {
+  @include button($brand-primary)
+}
+
+.btn--secondary{
+  @include button-secondary($brand-primary)
+}
+
+.btn--delete{
+  @include button($brand-danger)
+}
+
+.btn--delete--secondary{
+  @include button-secondary($brand-danger)
+}
+
+.btn--tertiary{
+  padding: 5px 15px!important;
+
+  font-size: 0.8em!important;
+}
+
+.btn[disabled]{
+  color: #fff;
+  border-color: $gray;
+  background: $gray;
+}
+
+
+

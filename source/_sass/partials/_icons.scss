@@ -1,0 +1,74 @@
+.material-icons {
+  display: inline-block;
+
+  white-space: nowrap;
+  letter-spacing: normal;
+  text-transform: none;
+  word-wrap: normal;
+
+  color: $gray;
+
+  font-family: 'Material Icons';
+  font-size: 24px;  /* Preferred icon size */
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.icon--alert{
+  color: $brand-danger;
+}
+
+.icon--success{
+  color: $brand-success;
+}
+
+.icon--text-right{
+  display: flex;
+
+  align-items:center;
+  i{
+    margin-right: 5px;
+  }
+}
+
+.icon--text-under{
+  display: inline-block;
+
+  text-align: center;
+  i{
+    width: 100%;
+  }
+}
+
+.icon--button{
+  border: none;
+  background: none;
+  &:hover *, &:active *{
+    color: $brand-primary!important;
+  }
+}
+
+.comment-avatar{
+  width: 2em;
+  height: 2em;
+
+  text-align: center;
+
+  color: #fff;
+  border-radius: 50%;
+  background-color: #427ab2;
+
+  font-size: $font-size-h2;
+  line-height: 2em;
+}

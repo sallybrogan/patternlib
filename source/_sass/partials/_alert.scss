@@ -1,0 +1,44 @@
+.alert-wrap {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: 320px;
+  z-index: 1060;
+
+  .alert-message {
+    padding: 20px;
+    background: $gray;
+    color: white;
+    display: flex;
+    border-bottom: 1px solid rgba(white, 0.2);
+
+    .icon-wrap {
+      flex: 0 0 40px;
+      font-size: $font-size-h3;
+      align-self: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    &.success {
+      background: $brand-success;
+    }
+
+    &.danger {
+      background: $brand-danger;
+    }
+
+    &.warning {
+      background: $brand-warning;
+    }
+  }
+}
