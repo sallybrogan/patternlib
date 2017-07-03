@@ -1,0 +1,75 @@
+.bsp-wrapper.bsp-paused.bsp-buffering.bsp-initialising
+
+  .bsp-element-wrapper
+    %video.bsp-element{ preload: "auto" }
+      Sorry, you"ll need a browser that supports HTML5 video content to view this video (IE9+).
+      %source{ type: "video/mp4", src: "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" }
+
+    .bsp-error.bsp-hidden
+
+    .bsp-details
+      %h1.bsp-video-title
+      %p.bsp-video-meta
+      %a.bsp-platform-link.bsp-small-button.bsp-hidden{ target: "_blank", rel: "noopener noreferrer" }
+        %span.fa.fa-external-link
+        Platform
+
+    .bsp-player-buffer
+
+    %a.bsp-playlist-direction.bsp-playlist-prev
+      %span.fa.fa-chevron-left
+    %a.bsp-playlist-direction.bsp-playlist-next
+      %span.fa.fa-chevron-right
+
+    %ul.bsp-playlist-clips-menu
+    .bsp-player-menu.bsp-transcript-menu
+    .bsp-player-menu.bsp-tags-menu
+
+
+  .bsp-buttons
+
+    .bsp-progress-track
+      .bsp-progress-track-background
+        .bsp-progress-buffered
+        .bsp-progress-played
+          .bsp-progress-handle
+
+    %a.bsp-logo{ href: "http://www.bigsofa.co.uk/", target: "_blank", rel: "noopener noreferrer" }
+      %img{  }
+
+      
+    %button.fa.fa-arrows-alt.bsp-fullscreen
+    %button.fa.fa-tag.bsp-toggle-tags
+    %button.fa.fa-globe.bsp-toggle-transcripts
+
+    %span.bsp-playlist-clips.bsp-hidden
+      %button.bsp-toggle-playlist-clips
+        %span.fa.fa-th-list
+        %span.bsp-clip-info
+          %span.bsp-clip-current 0
+          \/
+          %span.bsp-clip-count 0
+
+
+    %button.rel.bsp-play
+      %span.fa.fa-play
+      %span.fa.fa-pause.abs
+
+
+    .bsp-volume-wrap
+      %button.bsp-volume.fa.fa-volume-up
+      .bsp-volume-panel
+        .bsp-volume-slider
+          .bsp-volume-slider-track
+            .bsp-volume-slider-progress
+              .bsp-volume-slider-handle
+
+    %span.bsp-time
+      %span.bsp-time-elapsed 0:00
+      \/
+      %span.bsp-time-duration 0:00
+
+   {{> components-player_control_bar }}   
+   
+{{> components-transcript_player }}   
+  

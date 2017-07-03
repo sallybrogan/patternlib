@@ -6,7 +6,7 @@
   text-transform: none;
   word-wrap: normal;
 
-  color: $gray;
+  color: #666;
 
   font-family: 'Material Icons';
   font-size: 24px;  /* Preferred icon size */
@@ -36,6 +36,8 @@
 .icon--text-right{
   display: flex;
 
+  color: #666;
+
   align-items:center;
   i{
     margin-right: 5px;
@@ -46,6 +48,8 @@
   display: inline-block;
 
   text-align: center;
+
+   color: #666;
   i{
     width: 100%;
   }

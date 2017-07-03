@@ -45,8 +45,8 @@
     "m": false,
     "l": false,
     "full": false,
-    "random": false,
-    "disco": false,
+    "random": true,
+    "disco": true,
     "hay": true,
     "mqs": false,
     "find": false,
@@ -93,7 +93,13 @@
           "../../../css/pattern-scaffolding.css"
         ],
         "navLinks": {
-          "before": [],
+          "before": [
+            {
+              "text": "Voice and Tone",
+              "url": "http://example.com/writing-guide",
+              "class": ""
+            }
+          ],
           "after": []
         },
         "gearLinks": {
