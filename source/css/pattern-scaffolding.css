@@ -161,6 +161,10 @@ Use this to alter how you'd like the PL frontend to look like, and then export t
   background-color: #ccc;
 }
 
+.pattern-body{
+  padding: 2em 1em;
+}
+
 /*------------------------------------*\
 #NAVIGATION
 \*------------------------------------*/
@@ -743,7 +747,6 @@ Use this to alter how you'd like the PL frontend to look like, and then export t
 */
 .sg-main{
   box-sizing: border-box;
-  padding: 1em;
 }
 #sg-viewport {
   position: absolute;
@@ -858,21 +861,21 @@ Use this to alter how you'd like the PL frontend to look like, and then export t
 /**
 * Pattern Title
 */
-.sg-pattern-title {
+.pattern-body .sg-pattern-title {
   margin: 0 !important;
   padding: 0 !important;
 
   text-transform: capitalize !important;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  font-size: 1rem !important;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+  font-size: 1.4rem !important;
   font-weight: bold !important;
   line-height: 1 !important;
   /**
   * Pattern State that appears within a pattern title
   */
 }
-.sg-pattern-title a {
+.pattern-body  .sg-pattern-title a {
   display: inline-block;
 
   padding: 1em 0 0.3rem;
@@ -882,7 +885,7 @@ Use this to alter how you'd like the PL frontend to look like, and then export t
 
   color: #808080 !important;
 
-  font-weight: bold;
+  font-weight: normal;
 }
 .sg-pattern-title a:hover, .sg-pattern-title a:focus {
   color: #efefef !important;
@@ -1110,14 +1113,14 @@ Use this to alter how you'd like the PL frontend to look like, and then export t
 /**
 * Pattern Category Title
 */
-.sg-pattern-category-title {
+.pattern-body .sg-pattern-category-title {
   margin: 0 0 0.2rem;
 
   text-transform: capitalize;
 
   color: #222 !important;
 
-  font-size: 1.6rem !important;
+  font-size: 3rem !important;
 }
 .sg-pattern-category-title a {
   -webkit-transition: color 0.1s ease-out;

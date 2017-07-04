@@ -95,8 +95,8 @@
         "navLinks": {
           "before": [
             {
-              "text": "Voice and Tone",
-              "url": "http://example.com/writing-guide",
+              "text": "Introduction",
+              "url": "?p=introduction-Introduction",
               "class": ""
             }
           ],

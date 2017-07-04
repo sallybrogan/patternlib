@@ -10,7 +10,9 @@ var gulp = require("gulp"),
   chalk = require("chalk"),
   haml = require("gulp-haml"),
   sourcemaps = require("gulp-sourcemaps"),
-  sass = require("gulp-sass");
+  sass = require("gulp-sass"),
+  markdown = require("gulp-markdown"),
+  ext_replace = require("gulp-ext-replace");
 
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -103,6 +105,14 @@ gulp.task("haml", () => {
     .pipe(gulp.dest("./source/_patterns/"));
 });
 
+gulp.task("md", function () {
+  return gulp
+    .src("./source/_patterns/01-Introduction/*.md")
+    .pipe(markdown())
+    .pipe(ext_replace(".mustache"))
+    .pipe(gulp.dest("./source/_patterns/01-Introduction/"));
+});
+
 gulp.task("sass", function () {
   return gulp
     .src("./source/_sass/**/*.scss")
@@ -156,7 +166,8 @@ gulp.task(
     "pl-copy:styleguide",
     "pl-copy:styleguide-css",
     "haml",
-    "sass"
+    "sass",
+    "md"
   )
 );
 
@@ -236,6 +247,12 @@ function watch() {
       paths: [normalizePath(paths().source.patterns, "**", "*.haml")],
       config: { awaitWriteFinish: true },
       tasks: gulp.series("haml", reloadCSS)
+    },
+    {
+      name: "MD Templates",
+      paths: [normalizePath(paths().source.patterns, "**", "*.md")],
+      config: { awaitWriteFinish: true },
+      tasks: gulp.series("md", reloadCSS)
     },
     {
       name: "Styleguide Files",
